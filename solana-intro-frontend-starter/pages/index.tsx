@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     try { 
       setAddress(address);
       const key = new web3.PublicKey(address);
-      const connection = new web3.Connection(web3.clusterApiUrl("mainnet-beta"));
+      const connection = new web3.Connection("https://frosty-dimensional-telescope.solana-mainnet.quiknode.pro/575ef66fa9b1b3700588234e213c88bc47639991/");
       const balance = await connection.getBalance(key);
       const info = await connection.getAccountInfo(key);
       setExecutability(info?.executable ?? false);
