@@ -15,7 +15,7 @@ const Home: NextPage = () => {
     try { 
       setAddress(address);
       const key = new web3.PublicKey(address);
-      const connection = new web3.Connection(web3.clusterApiUrl("devnet"));
+      const connection = new web3.Connection(web3.clusterApiUrl("mainnet-beta"));
       const balance = await connection.getBalance(key);
       const info = await connection.getAccountInfo(key);
       setExecutability(info?.executable ?? false);
